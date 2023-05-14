@@ -1,0 +1,37 @@
+//https://leetcode.com/problems/candy/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int candy(vector<int>& ratings) {
+
+        int n = ratings.size();
+        vector<int>candyArray(n, 1);
+
+        //base case
+        if(n==1)
+            return 1;
+
+        //left to right traversal
+        for(int i=1; i<n; i++) {
+            if(ratings[i-1] < ratings[i] && candyArray[i] <= candyArray[i-1]) {
+                candyArray[i] = candyArray[i-1] + 1;
+            }
+        }
+        
+        //right to left traversal
+        for(int i=n-2; i>=0; i--) {
+            if(ratings[i] > ratings[i+1] && candyArray[i] <= candyArray[i+1]) {
+                candyArray[i] = candyArray[i+1] + 1;
+            }
+        }
+
+        int totalCandies = 0;
+        for(int i=0; i<n; i++) {
+            totalCandies += candyArray[i];
+        }
+        return totalCandies;
+    }
+};
