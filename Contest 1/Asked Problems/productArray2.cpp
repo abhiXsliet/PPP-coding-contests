@@ -1,0 +1,1 @@
+//https://www.hackerrank.com/contests/ppp-1-1676481916/challenges/product-array-2-2
