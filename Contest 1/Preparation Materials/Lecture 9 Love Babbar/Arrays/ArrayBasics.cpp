@@ -29,7 +29,7 @@ int getMin(int arr[], int size){
         //     mini = arr[i];
         // }
 
-         mini = min(mini, arr[i]);
+        mini = min(mini, arr[i]);
     }
     return mini;
 }
@@ -42,7 +42,7 @@ int getMax(int arr[], int size){
         //     maxi = arr[i];
         // }
 
-         maxi = max(maxi, arr[i]);
+        maxi = max(maxi, arr[i]);
     }
     return maxi;
 }
